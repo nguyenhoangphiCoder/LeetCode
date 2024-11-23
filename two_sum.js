@@ -159,18 +159,28 @@ console.log(twoSum(num4, target5));
 // bạn phải sử dụng một vòng lặp lồng nhau để kiểm tra mọi cặp.
 // Ví dụ:
 // Output: [[1, 4], [2, 3]]
-// Input: nums = [3, 2, 4, 5, 7], target = 10
+// Input: nums = [3, 2, 4, 8, 7], target = 10
 // Output: [[2, 4], [3, 7]]  // Các cặp chỉ số thỏa mãn là [2, 4] và [3, 7]
+function twoSum(numbers, Target) {
+  let Arr = [];
+  for (i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      if (numbers[i] + numbers[j] === Target) {
+        Arr.push([i, j]);
+      }
+    }
+  }
+  return Arr;
+}
+let numbers = [3, 2, 4, 8, 7];
+let Target = 10;
+console.log(twoSum(numbers, Target));
 
 // Bài 7: Two Sum - Tìm cặp có tổng lớn nhất
 // Mô tả: Tìm cặp hai số có tổng lớn nhất trong mảng. Trả về chỉ số của cặp đó.
-
-// Ví dụ:
-
-// javascript
-// Copy code
 // Input: nums = [1, 2, 3, 4], target = 7
 // Output: [2, 3]  // Cặp có tổng lớn nhất là nums[2] + nums[3] = 7
+
 // Bài 8: Two Sum với độ phức tạp O(n^2)
 // Mô tả: Viết một phiên bản của Two Sum sử dụng độ phức tạp O(n^2) với việc kiểm tra tất cả các cặp số mà không sử dụng Map hoặc bất kỳ cấu trúc dữ liệu nào hỗ trợ tra cứu nhanh.
 
